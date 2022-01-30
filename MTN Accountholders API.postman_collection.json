@@ -1,0 +1,1511 @@
+{
+	"info": {
+		"_postman_id": "4927e2f9-d21b-47f3-8e2b-4ed96c9ebd9c",
+		"name": "MTN Accountholders API",
+		"description": "The Accountholders API returns basic information of the Accountholder including MTN Mobile Money account status. i.e. ACTIVE, SUSPENDED, BLOCKED etc. It also support validation of a MoMo accountholder, as well as the verification of financial resourceinformation.\n\nContact Support:\n Name: MTN API Support\n Email: api.support@mtn.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "accountholders/{id}",
+			"item": [
+				{
+					"name": "Get account holder",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "KU8D0rQ6vyHigia0vx6rL1s7U2bs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) Transaction ID",
+								"key": "transactionId",
+								"value": ""
+							},
+							{
+								"description": "Encrypted ECW credentials",
+								"key": "x-authorization",
+								"value": ""
+							},
+							{
+								"key": "x-api-key",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "Set-Cookie",
+								"value": "T8w8JNuwnstnlEGVQT/WovDFYQKuA5aPeknqq3I/XMYqIUEaxa43Kg3AJ1fGQDKO4qghG5Ar2Y5Lhwr/IctKALtcKI2eFTNWVugOYO+nn3TUW/yPd9V0C6WdTCtrSIvX1azYLLJqyJncTKMiH8DVk9Ps4VX7T6R4Rm0H8vRQec4=",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://preprod.api.mtn.com/v1/accountholders/245966601433",
+							"protocol": "https",
+							"host": [
+								"preprod",
+								"api",
+								"mtn",
+								"com"
+							],
+							"path": [
+								"v1",
+								"accountholders",
+								"245966601433"
+							],
+							"query": [
+								{
+									"key": "includeoffnet",
+									"value": "false",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Retrieves the acountholder's profile of a MTN customer."
+					},
+					"response": [
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Transaction ID",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "x-authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id?includeoffnet=false",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id"
+									],
+									"query": [
+										{
+											"key": "includeoffnet",
+											"value": "false"
+										}
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"statusCode\": \"aute dolore Lorem non\",\n \"customerId\": \"MTN123456\",\n \"data\": {\n  \"identity\": [\n   {\n    \"idType\": \"MSISDN\",\n    \"idValue\": \"22546370829\"\n   },\n   {\n    \"idType\": \"MSISDN\",\n    \"idValue\": \"22546370829\"\n   }\n  ],\n  \"offnet\": true,\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"profileName\": \"Mobile Money User Profile\",\n  \"employeeId\": \"laborum elit\",\n  \"fris\": [\n   {\n    \"friType\": \"MSISDN, ALIAS, BANK, etc\",\n    \"currency\": {\n     \"code\": \"XOF\"\n    }\n   },\n   {\n    \"friType\": \"MSISDN, ALIAS, BANK, etc\",\n    \"currency\": {\n     \"code\": \"XOF\"\n    }\n   }\n  ],\n  \"loyaltyPointsAccountFri\": \"FRI:1040249/MM\",\n  \"acceptedtc\": [\n   {\n    \"acceptedtcversion\": \"v2\",\n    \"dateTime\": \"2005-08-20T18:22:16.158Z\"\n   },\n   {\n    \"acceptedtcversion\": \"v2\",\n    \"dateTime\": \"2016-09-03T22:40:44.728Z\"\n   }\n  ],\n  \"accountholderStatus\": \"ACTIVE\",\n  \"bankDomainName\": \"MFS\",\n  \"homeChargingRegionName\": \"aliqua ut anim Ut\",\n  \"accountholderType\": \"et Ut irure \",\n  \"hasParent\": true,\n  \"languageCode\": {\n   \"code\": \"sunt quis aliquip irure\"\n  },\n  \"child\": [\n   {\n    \"value\": \"<Circular reference to #/components/schemas/data detected>\"\n   },\n   {\n    \"value\": \"<Circular reference to #/components/schemas/data detected>\"\n   }\n  ]\n },\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Transaction ID",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "x-authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id?includeoffnet=false",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id"
+									],
+									"query": [
+										{
+											"key": "includeoffnet",
+											"value": "false"
+										}
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"timestamp\": \"1974-04-30T02:10:07.921Z\",\n \"statusCode\": \"ipsum\",\n \"statusMessage\": \"eiusmod sed in sint\",\n \"supportMessage\": \"sint ut\",\n \"transactionId\": \"sed incididunt laborum dolor\",\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Transaction ID",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "x-authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id?includeoffnet=true",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id"
+									],
+									"query": [
+										{
+											"key": "includeoffnet",
+											"value": "true"
+										}
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"timestamp\": \"1974-04-30T02:10:07.921Z\",\n \"statusCode\": \"ipsum\",\n \"statusMessage\": \"eiusmod sed in sint\",\n \"supportMessage\": \"sint ut\",\n \"transactionId\": \"sed incididunt laborum dolor\",\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Transaction ID",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "x-authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id?includeoffnet=true",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id"
+									],
+									"query": [
+										{
+											"key": "includeoffnet",
+											"value": "true"
+										}
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"timestamp\": \"1974-04-30T02:10:07.921Z\",\n \"statusCode\": \"ipsum\",\n \"statusMessage\": \"eiusmod sed in sint\",\n \"supportMessage\": \"sint ut\",\n \"transactionId\": \"sed incididunt laborum dolor\",\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Transaction ID",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "x-authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id?includeoffnet=true",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id"
+									],
+									"query": [
+										{
+											"key": "includeoffnet",
+											"value": "true"
+										}
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"timestamp\": \"1974-04-30T02:10:07.921Z\",\n \"statusCode\": \"ipsum\",\n \"statusMessage\": \"eiusmod sed in sint\",\n \"supportMessage\": \"sint ut\",\n \"transactionId\": \"sed incididunt laborum dolor\",\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						},
+						{
+							"name": "Method No Allowed",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Transaction ID",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "x-authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id?includeoffnet=true",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id"
+									],
+									"query": [
+										{
+											"key": "includeoffnet",
+											"value": "true"
+										}
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"timestamp\": \"1974-04-30T02:10:07.921Z\",\n \"statusCode\": \"ipsum\",\n \"statusMessage\": \"eiusmod sed in sint\",\n \"supportMessage\": \"sint ut\",\n \"transactionId\": \"sed incididunt laborum dolor\",\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						},
+						{
+							"name": "Not acceptable",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Transaction ID",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "x-authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id?includeoffnet=true",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id"
+									],
+									"query": [
+										{
+											"key": "includeoffnet",
+											"value": "true"
+										}
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Not Acceptable",
+							"code": 406,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"timestamp\": \"1974-04-30T02:10:07.921Z\",\n \"statusCode\": \"ipsum\",\n \"statusMessage\": \"eiusmod sed in sint\",\n \"supportMessage\": \"sint ut\",\n \"transactionId\": \"sed incididunt laborum dolor\",\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						},
+						{
+							"name": "Unsupported Media Type",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Transaction ID",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "x-authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id?includeoffnet=true",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id"
+									],
+									"query": [
+										{
+											"key": "includeoffnet",
+											"value": "true"
+										}
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Unsupported Media Type",
+							"code": 415,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"timestamp\": \"1974-04-30T02:10:07.921Z\",\n \"statusCode\": \"ipsum\",\n \"statusMessage\": \"eiusmod sed in sint\",\n \"supportMessage\": \"sint ut\",\n \"transactionId\": \"sed incididunt laborum dolor\",\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Transaction ID",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "x-authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id?includeoffnet=true",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id"
+									],
+									"query": [
+										{
+											"key": "includeoffnet",
+											"value": "true"
+										}
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"timestamp\": \"1974-04-30T02:10:07.921Z\",\n \"statusCode\": \"ipsum\",\n \"statusMessage\": \"eiusmod sed in sint\",\n \"supportMessage\": \"sint ut\",\n \"transactionId\": \"sed incididunt laborum dolor\",\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						}
+					]
+				},
+				{
+					"name": "Verify an accountholder's financial resource information.",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "irXvn6UiyJuNhCV9oVdCCgRQekv3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"description": "(Required) Client generated Id to include for tracing requests, so that the API can easily trace the HTTP request all the way from a client to MTNs backend processes (via our proxies). Each time a request is made to an MTN API the client should include a unique request reference in the HTTP Header. The value must be between 5 and 20 characters, and consist of ASCII letters, digits, or the characters +, /, =, and -. Invalid or blank IDs will be ignored and replaced with generated ones. MTN may use this to detect duplicate transactions from the client, but this functionality is not always guaranteed, so clients must make their own efforts to prevent duplicate transactions. MTN will also log the transactionId in order to assist with debugging and to correlate transactions processed by the API to requests from the client.",
+								"key": "transactionId",
+								"value": "202110041316"
+							},
+							{
+								"description": "Encrypted ECW credentials",
+								"key": "x-authorization",
+								"value": "T8w8JNuwnstnlEGVQT/WovDFYQKuA5aPeknqq3I/XMYqIUEaxa43Kg3AJ1fGQDKO4qghG5Ar2Y5Lhwr/IctKALtcKI2eFTNWVugOYO+nn3TUW/yPd9V0C6WdTCtrSIvX1azYLLJqyJncTKMiH8DVk9Ps4VX7T6R4Rm0H8vRQec4="
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "uLncL4OxLpK9Ui1UwSfsrlhbKlPWbYyC",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"optInVerificationPerformed\":true,\n\n\"identity\":\n[{\n    \"idType\":\"ID\",\n    \"idValue\":\"245966601404\"\n    }],\n    \"extension\":\n    [\"Test Extension 1\"],\n    \"resource\":null}"
+						},
+						"url": {
+							"raw": "https://mtn-preprod-preprod.apigee.net/v1/accountholders/245966601404/verify",
+							"protocol": "https",
+							"host": [
+								"mtn-preprod-preprod",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"v1",
+								"accountholders",
+								"245966601404",
+								"verify"
+							]
+						},
+						"description": "Verifies an accountholder's (or list of accountholders) financial resource information.This is typically called before linking an accountholder to a specific resource in the consuming system. The response will return a boolean to indicate whether an accountholder and service resource is valid (true) in the service provider system. The extension variable is an open field where any additional information that needs to flow between the consumer and target system, can be specified."
+					},
+					"response": [
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) Client generated Id to include for tracing requests, so that the API can easily trace the HTTP request all the way from a client to MTNs backend processes (via our proxies). Each time a request is made to an MTN API the client should include a unique request reference in the HTTP Header. The value must be between 5 and 20 characters, and consist of ASCII letters, digits, or the characters +, /, =, and -. Invalid or blank IDs will be ignored and replaced with generated ones. MTN may use this to detect duplicate transactions from the client, but this functionality is not always guaranteed, so clients must make their own efforts to prevent duplicate transactions. MTN will also log the transactionId in order to assist with debugging and to correlate transactions processed by the API to requests from the client.",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "X-Authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"identity\": [\n        {\n            \"idType\": \"MSISDN\",\n            \"idValue\": \"22546370829\"\n        },\n        {\n            \"idType\": \"MSISDN\",\n            \"idValue\": \"22546370829\"\n        }\n    ],\n    \"optInVerificationPerformed\": true,\n    \"extension\": [\n        \"labore sunt dolore esse amet\",\n        \"sed\"\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id/verify",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id",
+										"verify"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"statusCode\": \"elit amet\",\n \"customerId\": \"MTN123456\",\n \"data\": {\n  \"isValid\": false,\n  \"extension\": [\n   \"magna laboris dolor\",\n   \"dolore ullamco veniam mollit quis\"\n  ]\n },\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholderstatus/12345\"\n  }\n }\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) Client generated Id to include for tracing requests, so that the API can easily trace the HTTP request all the way from a client to MTNs backend processes (via our proxies). Each time a request is made to an MTN API the client should include a unique request reference in the HTTP Header. The value must be between 5 and 20 characters, and consist of ASCII letters, digits, or the characters +, /, =, and -. Invalid or blank IDs will be ignored and replaced with generated ones. MTN may use this to detect duplicate transactions from the client, but this functionality is not always guaranteed, so clients must make their own efforts to prevent duplicate transactions. MTN will also log the transactionId in order to assist with debugging and to correlate transactions processed by the API to requests from the client.",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "X-Authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"identity\": [\n        {\n            \"idType\": \"MSISDN\",\n            \"idValue\": \"22546370829\"\n        },\n        {\n            \"idType\": \"MSISDN\",\n            \"idValue\": \"22546370829\"\n        }\n    ],\n    \"optInVerificationPerformed\": true,\n    \"extension\": [\n        \"labore sunt dolore esse amet\",\n        \"sed\"\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id/verify",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id",
+										"verify"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"timestamp\": \"1974-04-30T02:10:07.921Z\",\n \"statusCode\": \"ipsum\",\n \"statusMessage\": \"eiusmod sed in sint\",\n \"supportMessage\": \"sint ut\",\n \"transactionId\": \"sed incididunt laborum dolor\",\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) Client generated Id to include for tracing requests, so that the API can easily trace the HTTP request all the way from a client to MTNs backend processes (via our proxies). Each time a request is made to an MTN API the client should include a unique request reference in the HTTP Header. The value must be between 5 and 20 characters, and consist of ASCII letters, digits, or the characters +, /, =, and -. Invalid or blank IDs will be ignored and replaced with generated ones. MTN may use this to detect duplicate transactions from the client, but this functionality is not always guaranteed, so clients must make their own efforts to prevent duplicate transactions. MTN will also log the transactionId in order to assist with debugging and to correlate transactions processed by the API to requests from the client.",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "X-Authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"identity\": [\n        {\n            \"idType\": \"MSISDN\",\n            \"idValue\": \"22546370829\"\n        },\n        {\n            \"idType\": \"MSISDN\",\n            \"idValue\": \"22546370829\"\n        }\n    ],\n    \"optInVerificationPerformed\": true,\n    \"extension\": [\n        \"labore sunt dolore esse amet\",\n        \"sed\"\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id/verify",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id",
+										"verify"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"timestamp\": \"1974-04-30T02:10:07.921Z\",\n \"statusCode\": \"ipsum\",\n \"statusMessage\": \"eiusmod sed in sint\",\n \"supportMessage\": \"sint ut\",\n \"transactionId\": \"sed incididunt laborum dolor\",\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) Client generated Id to include for tracing requests, so that the API can easily trace the HTTP request all the way from a client to MTNs backend processes (via our proxies). Each time a request is made to an MTN API the client should include a unique request reference in the HTTP Header. The value must be between 5 and 20 characters, and consist of ASCII letters, digits, or the characters +, /, =, and -. Invalid or blank IDs will be ignored and replaced with generated ones. MTN may use this to detect duplicate transactions from the client, but this functionality is not always guaranteed, so clients must make their own efforts to prevent duplicate transactions. MTN will also log the transactionId in order to assist with debugging and to correlate transactions processed by the API to requests from the client.",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "X-Authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"identity\": [\n        {\n            \"idType\": \"MSISDN\",\n            \"idValue\": \"22546370829\"\n        },\n        {\n            \"idType\": \"MSISDN\",\n            \"idValue\": \"22546370829\"\n        }\n    ],\n    \"optInVerificationPerformed\": true,\n    \"extension\": [\n        \"labore sunt dolore esse amet\",\n        \"sed\"\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id/verify",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id",
+										"verify"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"timestamp\": \"1974-04-30T02:10:07.921Z\",\n \"statusCode\": \"ipsum\",\n \"statusMessage\": \"eiusmod sed in sint\",\n \"supportMessage\": \"sint ut\",\n \"transactionId\": \"sed incididunt laborum dolor\",\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) Client generated Id to include for tracing requests, so that the API can easily trace the HTTP request all the way from a client to MTNs backend processes (via our proxies). Each time a request is made to an MTN API the client should include a unique request reference in the HTTP Header. The value must be between 5 and 20 characters, and consist of ASCII letters, digits, or the characters +, /, =, and -. Invalid or blank IDs will be ignored and replaced with generated ones. MTN may use this to detect duplicate transactions from the client, but this functionality is not always guaranteed, so clients must make their own efforts to prevent duplicate transactions. MTN will also log the transactionId in order to assist with debugging and to correlate transactions processed by the API to requests from the client.",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "X-Authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"identity\": [\n        {\n            \"idType\": \"MSISDN\",\n            \"idValue\": \"22546370829\"\n        },\n        {\n            \"idType\": \"MSISDN\",\n            \"idValue\": \"22546370829\"\n        }\n    ],\n    \"optInVerificationPerformed\": true,\n    \"extension\": [\n        \"labore sunt dolore esse amet\",\n        \"sed\"\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id/verify",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id",
+										"verify"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"timestamp\": \"1974-04-30T02:10:07.921Z\",\n \"statusCode\": \"ipsum\",\n \"statusMessage\": \"eiusmod sed in sint\",\n \"supportMessage\": \"sint ut\",\n \"transactionId\": \"sed incididunt laborum dolor\",\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						},
+						{
+							"name": "Method No Allowed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) Client generated Id to include for tracing requests, so that the API can easily trace the HTTP request all the way from a client to MTNs backend processes (via our proxies). Each time a request is made to an MTN API the client should include a unique request reference in the HTTP Header. The value must be between 5 and 20 characters, and consist of ASCII letters, digits, or the characters +, /, =, and -. Invalid or blank IDs will be ignored and replaced with generated ones. MTN may use this to detect duplicate transactions from the client, but this functionality is not always guaranteed, so clients must make their own efforts to prevent duplicate transactions. MTN will also log the transactionId in order to assist with debugging and to correlate transactions processed by the API to requests from the client.",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "X-Authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"identity\": [\n        {\n            \"idType\": \"MSISDN\",\n            \"idValue\": \"22546370829\"\n        },\n        {\n            \"idType\": \"MSISDN\",\n            \"idValue\": \"22546370829\"\n        }\n    ],\n    \"optInVerificationPerformed\": true,\n    \"extension\": [\n        \"labore sunt dolore esse amet\",\n        \"sed\"\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id/verify",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id",
+										"verify"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"timestamp\": \"1974-04-30T02:10:07.921Z\",\n \"statusCode\": \"ipsum\",\n \"statusMessage\": \"eiusmod sed in sint\",\n \"supportMessage\": \"sint ut\",\n \"transactionId\": \"sed incididunt laborum dolor\",\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						},
+						{
+							"name": "Not acceptable",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) Client generated Id to include for tracing requests, so that the API can easily trace the HTTP request all the way from a client to MTNs backend processes (via our proxies). Each time a request is made to an MTN API the client should include a unique request reference in the HTTP Header. The value must be between 5 and 20 characters, and consist of ASCII letters, digits, or the characters +, /, =, and -. Invalid or blank IDs will be ignored and replaced with generated ones. MTN may use this to detect duplicate transactions from the client, but this functionality is not always guaranteed, so clients must make their own efforts to prevent duplicate transactions. MTN will also log the transactionId in order to assist with debugging and to correlate transactions processed by the API to requests from the client.",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "X-Authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"identity\": [\n        {\n            \"idType\": \"MSISDN\",\n            \"idValue\": \"22546370829\"\n        },\n        {\n            \"idType\": \"MSISDN\",\n            \"idValue\": \"22546370829\"\n        }\n    ],\n    \"optInVerificationPerformed\": true,\n    \"extension\": [\n        \"labore sunt dolore esse amet\",\n        \"sed\"\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id/verify",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id",
+										"verify"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Not Acceptable",
+							"code": 406,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"timestamp\": \"1974-04-30T02:10:07.921Z\",\n \"statusCode\": \"ipsum\",\n \"statusMessage\": \"eiusmod sed in sint\",\n \"supportMessage\": \"sint ut\",\n \"transactionId\": \"sed incididunt laborum dolor\",\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						},
+						{
+							"name": "Unsupported Media Type",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) Client generated Id to include for tracing requests, so that the API can easily trace the HTTP request all the way from a client to MTNs backend processes (via our proxies). Each time a request is made to an MTN API the client should include a unique request reference in the HTTP Header. The value must be between 5 and 20 characters, and consist of ASCII letters, digits, or the characters +, /, =, and -. Invalid or blank IDs will be ignored and replaced with generated ones. MTN may use this to detect duplicate transactions from the client, but this functionality is not always guaranteed, so clients must make their own efforts to prevent duplicate transactions. MTN will also log the transactionId in order to assist with debugging and to correlate transactions processed by the API to requests from the client.",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "X-Authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"identity\": [\n        {\n            \"idType\": \"MSISDN\",\n            \"idValue\": \"22546370829\"\n        },\n        {\n            \"idType\": \"MSISDN\",\n            \"idValue\": \"22546370829\"\n        }\n    ],\n    \"optInVerificationPerformed\": true,\n    \"extension\": [\n        \"labore sunt dolore esse amet\",\n        \"sed\"\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id/verify",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id",
+										"verify"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Unsupported Media Type",
+							"code": 415,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"timestamp\": \"1974-04-30T02:10:07.921Z\",\n \"statusCode\": \"ipsum\",\n \"statusMessage\": \"eiusmod sed in sint\",\n \"supportMessage\": \"sint ut\",\n \"transactionId\": \"sed incididunt laborum dolor\",\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) Client generated Id to include for tracing requests, so that the API can easily trace the HTTP request all the way from a client to MTNs backend processes (via our proxies). Each time a request is made to an MTN API the client should include a unique request reference in the HTTP Header. The value must be between 5 and 20 characters, and consist of ASCII letters, digits, or the characters +, /, =, and -. Invalid or blank IDs will be ignored and replaced with generated ones. MTN may use this to detect duplicate transactions from the client, but this functionality is not always guaranteed, so clients must make their own efforts to prevent duplicate transactions. MTN will also log the transactionId in order to assist with debugging and to correlate transactions processed by the API to requests from the client.",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "X-Authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"identity\": [\n        {\n            \"idType\": \"MSISDN\",\n            \"idValue\": \"22546370829\"\n        },\n        {\n            \"idType\": \"MSISDN\",\n            \"idValue\": \"22546370829\"\n        }\n    ],\n    \"optInVerificationPerformed\": true,\n    \"extension\": [\n        \"labore sunt dolore esse amet\",\n        \"sed\"\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id/verify",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id",
+										"verify"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"timestamp\": \"1974-04-30T02:10:07.921Z\",\n \"statusCode\": \"ipsum\",\n \"statusMessage\": \"eiusmod sed in sint\",\n \"supportMessage\": \"sint ut\",\n \"transactionId\": \"sed incididunt laborum dolor\",\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						}
+					]
+				},
+				{
+					"name": "Validate an accountholder's account status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "a7m1pksOEHM8bKjwRZZprpfNOyrO",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) Transaction ID",
+								"key": "transactionId",
+								"value": ""
+							},
+							{
+								"description": "Encrypted ECW credentials",
+								"key": "x-authorization",
+								"value": ""
+							},
+							{
+								"key": "x-api-key",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://preprod.api.mtn.com/v1/accountholders/245966601433/validate",
+							"protocol": "https",
+							"host": [
+								"preprod",
+								"api",
+								"mtn",
+								"com"
+							],
+							"path": [
+								"v1",
+								"accountholders",
+								"245966601433",
+								"validate"
+							]
+						},
+						"description": "Validates the account status of a MoMo customer. By supplying the customer's id to validate, MADAPI will send the reques tto the backend system and map the response back to a boolean which will indicate whether the customer is a valid MoMo customer on ECW"
+					},
+					"response": [
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Transaction ID",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "X-Authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id/validate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id",
+										"validate"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"statusCode\": \"elit amet\",\n \"customerId\": \"MTN123456\",\n \"data\": {\n  \"isValid\": false,\n  \"extension\": [\n   \"magna laboris dolor\",\n   \"dolore ullamco veniam mollit quis\"\n  ]\n },\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholderstatus/12345\"\n  }\n }\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Transaction ID",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "X-Authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id/validate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id",
+										"validate"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"timestamp\": \"1974-04-30T02:10:07.921Z\",\n \"statusCode\": \"ipsum\",\n \"statusMessage\": \"eiusmod sed in sint\",\n \"supportMessage\": \"sint ut\",\n \"transactionId\": \"sed incididunt laborum dolor\",\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Transaction ID",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "X-Authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id/validate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id",
+										"validate"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"timestamp\": \"1974-04-30T02:10:07.921Z\",\n \"statusCode\": \"ipsum\",\n \"statusMessage\": \"eiusmod sed in sint\",\n \"supportMessage\": \"sint ut\",\n \"transactionId\": \"sed incididunt laborum dolor\",\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Transaction ID",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "X-Authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id/validate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id",
+										"validate"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"timestamp\": \"1974-04-30T02:10:07.921Z\",\n \"statusCode\": \"ipsum\",\n \"statusMessage\": \"eiusmod sed in sint\",\n \"supportMessage\": \"sint ut\",\n \"transactionId\": \"sed incididunt laborum dolor\",\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Transaction ID",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "X-Authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id/validate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id",
+										"validate"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"timestamp\": \"1974-04-30T02:10:07.921Z\",\n \"statusCode\": \"ipsum\",\n \"statusMessage\": \"eiusmod sed in sint\",\n \"supportMessage\": \"sint ut\",\n \"transactionId\": \"sed incididunt laborum dolor\",\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						},
+						{
+							"name": "Method No Allowed",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Transaction ID",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "X-Authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id/validate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id",
+										"validate"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"timestamp\": \"1974-04-30T02:10:07.921Z\",\n \"statusCode\": \"ipsum\",\n \"statusMessage\": \"eiusmod sed in sint\",\n \"supportMessage\": \"sint ut\",\n \"transactionId\": \"sed incididunt laborum dolor\",\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						},
+						{
+							"name": "Not acceptable",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Transaction ID",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "X-Authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id/validate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id",
+										"validate"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Not Acceptable",
+							"code": 406,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"timestamp\": \"1974-04-30T02:10:07.921Z\",\n \"statusCode\": \"ipsum\",\n \"statusMessage\": \"eiusmod sed in sint\",\n \"supportMessage\": \"sint ut\",\n \"transactionId\": \"sed incididunt laborum dolor\",\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						},
+						{
+							"name": "Unsupported Media Type",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Transaction ID",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "X-Authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id/validate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id",
+										"validate"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Unsupported Media Type",
+							"code": 415,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"timestamp\": \"1974-04-30T02:10:07.921Z\",\n \"statusCode\": \"ipsum\",\n \"statusMessage\": \"eiusmod sed in sint\",\n \"supportMessage\": \"sint ut\",\n \"transactionId\": \"sed incididunt laborum dolor\",\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Transaction ID",
+										"key": "transactionId",
+										"value": "cillum minim ut mollit anim"
+									},
+									{
+										"description": "Encrypted ECW credentials",
+										"key": "X-Authorization",
+										"value": "cillum minim ut mollit anim"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accountholders/:id/validate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accountholders",
+										":id",
+										"validate"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"timestamp\": \"1974-04-30T02:10:07.921Z\",\n \"statusCode\": \"ipsum\",\n \"statusMessage\": \"eiusmod sed in sint\",\n \"supportMessage\": \"sint ut\",\n \"transactionId\": \"sed incididunt laborum dolor\",\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://host:port/v1/accountholders/12345\"\n  }\n }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://api.mtn.com/v1",
+			"type": "string"
+		}
+	]
+}

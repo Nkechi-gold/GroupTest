@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "4b4e26f1-655f-4ea5-8b8d-a8ecefd2c7ac",
+		"name": "MTN Customer Plans API",
+		"description": "An API to retrieve the Plan details of an MTN customer and calculate aYo premiums. Can also be used by 3rd-party partners (3PP) for airtime recharge of a prepaid subscriber\n**24-June-21: ChangeID: c835ca3**\n    - Added an optional channel parameter on the /customers/{customerId}/plans/refill endpoint\n\nContact Support:\n Name: MTN API Support\n Email: developer-support@mtn.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "customers/{customer Id}/plans",
+			"item": [
+				{
+					"name": "{{base_url}}/v2/customers/245969271824/plans",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "KU8D0rQ6vyHigia0vx6rL1s7U2bs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "uLncL4OxLpK9Ui1UwSfsrlhbKlPWbYyC",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "transactionId",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "x-authorization",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://preprod.api.mtn.com/v2/customers/245966601487/plans?momo=true",
+							"protocol": "https",
+							"host": [
+								"preprod",
+								"api",
+								"mtn",
+								"com"
+							],
+							"path": [
+								"v2",
+								"customers",
+								"245966601487",
+								"plans"
+							],
+							"query": [
+								{
+									"key": "includeReservations",
+									"value": "false",
+									"disabled": true
+								},
+								{
+									"key": "quoteid",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "momo",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "X-API-Key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "<API Key>",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://api.mtn.com/v2",
+			"type": "string"
+		}
+	]
+}

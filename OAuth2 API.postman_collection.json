@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "47f87649-7638-4740-b79d-409485948504",
+		"name": "OAuth2 API",
+		"description": "Generates an access token based on username and password.\n\nContact Support:\n Name: MTN API Support\n Email: developer-support@mtn.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "External Oauth",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://preprod.api.mtn.com/v1/oauth/access_token?grant_type=client_credentials",
+					"protocol": "https",
+					"host": [
+						"preprod",
+						"api",
+						"mtn",
+						"com"
+					],
+					"path": [
+						"v1",
+						"oauth",
+						"access_token"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "6eL0zBAIkdkHQBgwU6JmpobVdsIvCoUq",
+							"disabled": true
+						},
+						{
+							"key": "client_secret",
+							"value": "aYqAB0yXhZTSwrlk",
+							"disabled": true
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials"
+						}
+					]
+				},
+				"description": "OAuth2 endpoint that provides access token for consumers of this endpoint."
+			},
+			"response": [
+				{
+					"name": "Successful token generation.",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: basic",
+								"key": "Authorization",
+								"value": "Basic <credentials>"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "tqgHkkLGmBQJPRMe2dzwLnh92FBQmEd1",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "EKoLDiQNZHHJC4lS",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://preprod.api.mtn.com/v1/token?grant_type=client_credentials",
+							"protocol": "https",
+							"host": [
+								"preprod",
+								"api",
+								"mtn",
+								"com"
+							],
+							"path": [
+								"v1",
+								"token"
+							],
+							"query": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"access_token\": \"Q3C3dhzGxB4I8AZJ6ldPxuSB3Y6o\",\n \"token_type\": \"bearer\",\n \"expires_in\": 3599\n}"
+				},
+				{
+					"name": "Bad Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: basic",
+								"key": "Authorization",
+								"value": "Basic <credentials>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"grant_type\": \"client_credentials\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"token"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"error\": \"unsupported_grant_type\"\n}"
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: basic",
+								"key": "Authorization",
+								"value": "Basic <credentials>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"grant_type\": \"client_credentials\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"token"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"error\": \"invalid_client\"\n}"
+				},
+				{
+					"name": "Invalid Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: basic",
+								"key": "Authorization",
+								"value": "Basic <credentials>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"grant_type\": \"client_credentials\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"token"
+							]
+						}
+					},
+					"status": "Payment Required",
+					"code": 402,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"error\": \"invalid_request\"\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://api.mtn.com/auth",
+			"type": "string"
+		}
+	]
+}

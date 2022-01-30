@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "6935bf82-16a0-4730-bf03-d2f0e0849894",
+		"name": "Subscription API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get AccountHolderinfo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3RCIbK6ccc2DzAqa6KGmz9RgQpB7",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "transactionId",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "credentials",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://preprod.api.mtn.com/v2/customers/245966601433/subscriptions?subscriptionProviderId=momo",
+					"protocol": "https",
+					"host": [
+						"preprod",
+						"api",
+						"mtn",
+						"com"
+					],
+					"path": [
+						"v2",
+						"customers",
+						"245966601433",
+						"subscriptions"
+					],
+					"query": [
+						{
+							"key": "subscriptionProviderId",
+							"value": "momo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Setaccountholderinfo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "KU8D0rQ6vyHigia0vx6rL1s7U2bs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "x-authorization",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "transactionId",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"subscriptionId\": \"aYoRwC\",\r\n    \"subscriptionProviderId\": \"AYO\",\r\n    \"subscriptionName\": \"AYO Product Flag Name\",\r\n    \"subscriptionStatus\": \"Active\",\r\n    \"subscriptionDescription\": \"This is the description of the subscription service\",\r\n    \"subscriptionType\": \"ADHOC\",\r\n    \"subscriptionLength\": \"AYO\",\r\n    \"isCVMoffer\": false,\r\n    \"registrationChannel\": \"AYO\",\r\n    \"sendSMSNotification\": \"true\",\r\n    \"amountCharged\": 50,\r\n    \"auto-renew\": \"false\",\r\n    \"email\": \"skliz4rel@gmail.com\",\r\n    \"subscriptionPaymentSource\":\"MOMO\",\r\n    \"nodeId\": \"0000\",\r\n    \"bundleType\": \"FLEXI\",\r\n    \"productCost\": 20\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://preprod.api.mtn.com/v2/customers/245966601433/subscriptions",
+					"protocol": "https",
+					"host": [
+						"preprod",
+						"api",
+						"mtn",
+						"com"
+					],
+					"path": [
+						"v2",
+						"customers",
+						"245966601433",
+						"subscriptions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
